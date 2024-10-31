@@ -15,7 +15,7 @@ class Product_page(Base):
         self.driver = driver
 
     #Locators
-    # локаторы записываем в переменные
+    # локаторы записываем в переменныеее
     name_product_on_product_page = "//h1[@id='pagetitle']"
     price_product = "(//span[@class='price_value'])[1]"
 
