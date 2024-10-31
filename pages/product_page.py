@@ -1,3 +1,4 @@
+import time
 
 from selenium.webdriver.common.by import By
 
@@ -17,28 +18,39 @@ class Product_page(Base):
     #Locators
     # локаторы записываем в переменные
     name_product_on_product_page = "//h1[@id='pagetitle']"
-    price_product = "(//span[@class='price_value'])[1]"
-
-
+    price_product_on_product_page = "(//span[@class='price_value'])[1]"
+    add_to_cart_button = "//div[@id='bx_1213802087_98336_basket_actions']"
+    cart_button = "(//a[@class='basket-link basket  with_price big  basket-count'])[1]"
 
 
 
     #Getters
     # находим элементы по локатору
     def get_name_product_on_product_page(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.name_product_on_product_page))) #спарсили название товара со страницы продукты
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.name_product_on_product_page)))
 
-    def get_price_product(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.price_product)))
+    def get_price_product_on_product_page(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.price_product_on_product_page)))
 
+    def get_add_to_cart_button(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.add_to_cart_button)))
 
+    def get_cart_button(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.cart_button)))
 
 
     #Actions
     # что-то вводим или нажимаем кнопки
-    # def input_filter_price_min(self, price_min):
-    #     self.get_filter_price_min().send_keys(price_min)
-    #     print("Ввели минимальную стоимость товара: "+ price_min)
+
+    def click_add_to_cart_button(self):
+        self.get_add_to_cart_button().click()
+        print("Добавили товар в корзину")
+        time.sleep(3)
+
+    def click_cart_button(self):
+        self.get_cart_button().click()
+        print("Нажали на кнопку Корзина")
+        time.sleep(3)
 
 
 
@@ -47,7 +59,9 @@ class Product_page(Base):
     def use_product_page(self):
         self.get_current_url()
         self.assert_word(self.get_name_product_on_product_page(), "Лопатка кулинарная рыбная 93-AK2C-11")
-        self.assert_price(self.get_price_product(), "120")
+        self.assert_price(self.get_price_product_on_product_page(), "120")
+        self.click_add_to_cart_button()
+        self.click_cart_button()
 
 
 
