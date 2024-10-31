@@ -57,20 +57,20 @@ class Filter_page(Base):
     def input_filter_price_max(self, price_max):
         self.get_filter_price_max().send_keys(price_max)
         print("Ввели максимальную стоимость товара: "+ price_max)
-        time.sleep(5)
+        time.sleep(3)
 
     def move_filter_width_left_slider(self):
         self.driver.execute_script("window.scrollTo(0, 600);") #скролл страницы на 6 см вниз, чтобы найти кнопку на слайдере
         self.action.click_and_hold(self.get_filter_width_left_slider()).pause(2).move_by_offset(25, 0).release().perform()
         self.driver.execute_script("window.scrollTo(0, 0);") #скролл страницы в самый верх
         print("Передвинули левый слайдер ширины")
-        time.sleep(5)
+        time.sleep(3)
 
 
     def click_product_tab(self):
         self.get_product_tab().click()
         print("Выбрали товар на странице фильтра")
-        time.sleep(3)
+        # time.sleep(3)
 
 
     #Methods

@@ -45,12 +45,12 @@ class Product_page(Base):
     def click_add_to_cart_button(self):
         self.get_add_to_cart_button().click()
         print("Добавили товар в корзину")
-        time.sleep(3)
+        # time.sleep(3)
 
     def click_cart_button(self):
         self.get_cart_button().click()
         print("Нажали на кнопку Корзина")
-        time.sleep(3)
+        # time.sleep(3)
 
 
 

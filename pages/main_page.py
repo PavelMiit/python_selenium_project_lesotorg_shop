@@ -43,7 +43,7 @@ class Main_page(Base):
     def click_serch_button(self):
         self.get_click_for_search_product().click()
         print("Нажали на кнопку поиска товара")
-        time.sleep(5)
+        # time.sleep(5)
 
 
 

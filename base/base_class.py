@@ -1,10 +1,9 @@
-
+import datetime
 
 class Base():
 
     def __init__(self, driver):
         self.driver = driver
-
 
     """Method get current url"""
     def get_current_url(self):
@@ -25,5 +24,16 @@ class Base():
         print("Успешно проверили стоимость товара: " + value_price)
 
 
+    """Method Screenshot"""
+    def get_screenshot(self):
+        now_date = datetime.datetime.now().strftime("%H.%M.%S-%Y.%m.%d")
+        name_screenshot = "screenshot " + now_date + ".png"
+        self.driver.save_screenshot('C:\\Users\\pmitc\\pythonLesson\\selenium_project_lesotorg_shop\\screen\\' + name_screenshot)
+        print("Сделали скриншот: " + name_screenshot)
 
+    """Method assert url"""
+    def assert_url(self, result_url):
+        get_url = self.driver.current_url
+        assert get_url == result_url
+        print("Успешно сравнили URL")
 
