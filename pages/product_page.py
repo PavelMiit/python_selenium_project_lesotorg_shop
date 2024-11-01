@@ -1,10 +1,8 @@
 import time
 
 from selenium.webdriver.common.by import By
-
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-
 from base.base_class import Base
 
 
@@ -21,7 +19,6 @@ class Product_page(Base):
     price_product_on_product_page = "(//span[@class='price_value'])[1]"
     add_to_cart_button = "//div[@id='bx_1213802087_98336_basket_actions']"
     cart_button = "(//a[@class='basket-link basket  with_price big  basket-count'])[1]"
-
 
 
     #Getters
@@ -41,7 +38,6 @@ class Product_page(Base):
 
     #Actions
     # что-то вводим или нажимаем кнопки
-
     def click_add_to_cart_button(self):
         self.get_add_to_cart_button().click()
         print("Добавили товар в корзину")
@@ -51,7 +47,6 @@ class Product_page(Base):
         self.get_cart_button().click()
         print("Нажали на кнопку Корзина")
         # time.sleep(3)
-
 
 
     #Methods

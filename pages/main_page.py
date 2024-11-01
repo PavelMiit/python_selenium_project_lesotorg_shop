@@ -21,8 +21,6 @@ class Main_page(Base):
     serch_button = "//button[@class='btn white search-btn']"
 
 
-
-
     #Getters
     # находим элементы по локатору
     def get_input_product(self):
@@ -32,19 +30,16 @@ class Main_page(Base):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.serch_button)))
 
 
-
     #Actions
     # что-то вводим или нажимаем кнопки
     def input_name_product(self, product_name):
         self.get_input_product().send_keys(product_name)
         print("Ввели название товара")
 
-
     def click_serch_button(self):
         self.get_click_for_search_product().click()
         print("Нажали на кнопку поиска товара")
         # time.sleep(5)
-
 
 
     #Methods

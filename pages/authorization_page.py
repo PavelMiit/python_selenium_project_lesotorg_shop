@@ -26,9 +26,6 @@ class Authorization_page(Base):
     login_button = "//span[@class='web web2 btn btn-default']"
 
 
-
-
-
     #Getters
     # находим элементы по локатору
     def get_tel_number(self):
@@ -42,9 +39,6 @@ class Authorization_page(Base):
 
     def get_login_button(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.login_button)))
-
-
-
 
 
     #Actions
@@ -66,8 +60,6 @@ class Authorization_page(Base):
         self.get_login_button().click()
         print("Нажали кнопку 'Войти'")
         time.sleep(3)
-
-
 
 
     #Methods

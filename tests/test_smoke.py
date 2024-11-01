@@ -1,5 +1,4 @@
 from selenium import webdriver
-
 from pages.authorization_page import Authorization_page
 from pages.cart_page import Cart_page
 from pages.filter_page import Filter_page

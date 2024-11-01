@@ -28,8 +28,6 @@ class Filter_page(Base):
     product_tab = "//a[@id='bx_2738408476_98336_pict']"
 
 
-
-
     #Getters
     # находим элементы по локатору
     def get_filter_price_min(self):
@@ -43,9 +41,6 @@ class Filter_page(Base):
 
     def get_product_tab(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.product_tab)))
-
-
-
 
 
     #Actions
@@ -65,7 +60,6 @@ class Filter_page(Base):
         self.driver.execute_script("window.scrollTo(0, 0);") #скролл страницы в самый верх
         print("Передвинули левый слайдер ширины")
         time.sleep(3)
-
 
     def click_product_tab(self):
         self.get_product_tab().click()
