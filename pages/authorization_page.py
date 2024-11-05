@@ -54,7 +54,7 @@ class Authorization_page(Base):
 
     def click_show_password_button(self):
         self.get_show_password_button().click()
-        print("Нажали чек-бокс 'Показать пароль'")
+        print("Нажали чек-бокс 'Показать пароль '")
 
     def click_login_button(self):
         self.get_login_button().click()
