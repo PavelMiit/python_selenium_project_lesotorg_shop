@@ -65,13 +65,13 @@ class Authorization_page(Base):
     #Methods
     # вызываем к выполнению
     def use_authorization_page(self):
-        self.get_current_url()
-        self.input_tel_number(self.value_tel_number)
-        self.input_password(self.value_password)
-        self.click_show_password_button()
-        self.click_login_button()
-        self.get_screenshot()
-        self.assert_url("https://leso-torg.ru/order/")
+        self.get_current_url() #получаем URL
+        self.input_tel_number(self.value_tel_number) #ввели номер телефона
+        self.input_password(self.value_password) #ввели пароль
+        self.click_show_password_button() #нажали на чек-бокс "Показать пароль"
+        self.click_login_button() #нажали кнопку 'Войти
+        self.get_screenshot() #сделали скриншот
+        self.assert_url("https://leso-torg.ru/order/") #сравнили URL  с ожидаемым
 
 
 

@@ -1,4 +1,6 @@
 import datetime
+import os
+
 
 class Base():
 
@@ -28,10 +30,11 @@ class Base():
 
     """Method Screenshot"""
     def get_screenshot(self):
-        now_date = datetime.datetime.now().strftime("%H.%M.%S-%Y.%m.%d")
-        name_screenshot = "screenshot " + now_date + ".png"
-        self.driver.save_screenshot('C:\\Users\\pmitc\\pythonLesson\\selenium_project_lesotorg_shop\\screen\\' + name_screenshot)
+        name_screenshot = "screenshot_" + datetime.datetime.now().strftime("%H.%M.%S-%Y.%m.%d") + ".png"
+        screenshot_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'screen', name_screenshot)
+        self.driver.save_screenshot(screenshot_path)
         print("Сделали скриншот: " + name_screenshot)
+
 
 
     """Method assert url"""

@@ -52,11 +52,11 @@ class Product_page(Base):
     #Methods
     # вызываем к выполнению
     def use_product_page(self):
-        self.get_current_url()
-        self.assert_word(self.get_name_product_on_product_page(), "Лопатка кулинарная рыбная 93-AK2C-11")
-        self.assert_price(self.get_price_product_on_product_page(), "120")
-        self.click_add_to_cart_button()
-        self.click_cart_button()
+        self.get_current_url() #получаем URL
+        self.assert_word(self.get_name_product_on_product_page(), "Лопатка кулинарная рыбная 93-AK2C-11") #сравниваем название продукта на странице product page
+        self.assert_price(self.get_price_product_on_product_page(), "120") #сравниваем цену продукта на странице product page
+        self.click_add_to_cart_button() #добавлям товар в корзину
+        self.click_cart_button() #нажимаем на кнопку корзина
 
 
 

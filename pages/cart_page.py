@@ -37,8 +37,8 @@ class Cart_page(Base):
     #Methods
     # вызываем к выполнению
     def use_cart_page(self):
-        self.get_current_url()
-        self.click_button_place_an_order()
+        self.get_current_url() #получаем URL
+        self.click_button_place_an_order() #нажимаем на кнопку "Оформить заказ"
 
 
 

@@ -70,11 +70,11 @@ class Filter_page(Base):
     #Methods
     # вызываем к выполнению
     def use_filter_page(self):
-        self.get_current_url()
-        self.input_filter_price_min(self.price_min)
-        self.input_filter_price_max(self.price_max)
-        self.move_filter_width_left_slider()
-        self.click_product_tab()
+        self.get_current_url() #получаем URL
+        self.input_filter_price_min(self.price_min) #вводим минимальную стоимость товара
+        self.input_filter_price_max(self.price_max) #вводим максимальную стоимость товара
+        self.move_filter_width_left_slider() #двигаем ползунок фильтра "Ширина"
+        self.click_product_tab() #выбрали товар на странице фильтра
 
 
 

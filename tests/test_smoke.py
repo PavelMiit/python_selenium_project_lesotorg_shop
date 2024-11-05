@@ -14,20 +14,20 @@ def test_smoke_product():
 
     print("Старт теста")
 
-    search_product = Main_page(driver)
-    search_product.input_product_for_search()
+    search_product = Main_page(driver) #создали объект экземпляра класса Main_page
+    search_product.input_product_for_search() #обратились к экземлпяру класса search_product и вызвали метод ввода названия товара в строку поиска и клика по кнопке "Поиск"
 
     filter_page = Filter_page(driver)
-    filter_page.use_filter_page()
+    filter_page.use_filter_page() #вызвали метод работы с фильтрами на странице filter page
 
     product_page = Product_page(driver)
-    product_page.use_product_page()
+    product_page.use_product_page() #вызвали метод сравнения названия товара и его цены на странице product page и добавления товара в корзину
 
     cart_page = Cart_page(driver)
-    cart_page.use_cart_page()
+    cart_page.use_cart_page() #вызвали метод нажатия кнопки "Оформить заказ"на странице cart page
 
     authorization_page = Authorization_page(driver)
-    authorization_page.use_authorization_page()
+    authorization_page.use_authorization_page() #вызвали метод заполнения полей, получения скриншота и сравнения URL на странице authorization page
 
 
 

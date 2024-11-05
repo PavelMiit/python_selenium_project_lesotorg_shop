@@ -45,9 +45,9 @@ class Main_page(Base):
     #Methods
     # вызываем к выполнению
     def input_product_for_search(self):
-        self.get_current_url()
-        self.input_name_product(self.product_name)
-        self.click_serch_button()
+        self.get_current_url() #получаем URL
+        self.input_name_product(self.product_name) #вводим название товара
+        self.click_serch_button() #ищем товар
 
 
 
