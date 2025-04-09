@@ -1,4 +1,6 @@
 import time
+
+from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
 from selenium.webdriver.support import expected_conditions as EC
@@ -34,7 +36,8 @@ class Main_page(Base):
     # что-то вводим или нажимаем кнопки
     def input_name_product(self, product_name):
         self.get_input_product().send_keys(product_name)
-        print("Ввели название товара")
+        self.get_input_product().send_keys(Keys.ENTER)
+        print("Ввели название товара и нажали ENTER")
 
     def click_serch_button(self):
         self.get_click_for_search_product().click()
